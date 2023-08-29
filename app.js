@@ -1,3 +1,4 @@
-const greeting = require("./greeting.js"); 
+const greetings = require('./greetings.js'); 
 
-console.log(greeting.greet("freeCodeCamp"));
+console.log(greetings.greet('freeCodeCamp'));
+console.log(greetings.greetHelloWorld());
