@@ -1,5 +1,3 @@
-function greet(name){
-    return `Hello, ${name}`;
-}
+const greeting = require("./greeting.js"); 
 
-console.log(greet("freeCodeCamp"));
+console.log(greeting.greet("freeCodeCamp"));
