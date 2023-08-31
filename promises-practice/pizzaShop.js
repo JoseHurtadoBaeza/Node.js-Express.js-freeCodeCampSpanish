@@ -26,6 +26,17 @@ myPizzaOrder
     .then((confirmationMessage) => {
         console.log(confirmationMessage);
     })
-    .then(null, (errorMessage) => {
+    .catch((errorMessage) => {
         console.log(errorMessage);
     });
+
+
+// const handleOrder = (confirmationMessage) => {
+//     console.log(confirmationMessage);
+// }
+
+// const declineOrder = (errorMessage) => {
+//     console.log(errorMessage);
+// }
+
+// myPizzaOrder.then(handleOrder, declineOrder).catch(declineOrder);
