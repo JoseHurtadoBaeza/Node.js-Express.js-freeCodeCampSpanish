@@ -5,7 +5,7 @@ const {math} = require('../data/courses.js').coursesInfo;
 const routerMaths = express.Router();
 
 routerMaths.get('/', (req, res) => {
-    res.send(JSON.stringify(math));
+    res.json(math);
 });
 
 routerMaths.get('/:topic', (req, res) => {
@@ -13,10 +13,10 @@ routerMaths.get('/:topic', (req, res) => {
     const results = math.filter(course => course.topic === topic);
 
     if (results.length === 0){
-        return res.status(404).send(`No courses found about ${topic}.`);
+        return res.status(204).send(`No courses found about ${topic}.`);
     }
 
-    res.send(JSON.stringify(results));
+    res.json(results);
 
 });
 
