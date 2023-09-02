@@ -29,6 +29,14 @@ app.get('/api/courses/programming/:language', (req, res) => {
         return res.status(404).send(`No courses found about ${language}.`);
     } 
 
+    if (req.query.order === 'views') {
+        return res.send(JSON.stringify(results.sort((a, b) => a.views - b.views)));
+    } 
+
+    res.send(JSON.stringify(results));
+
+    //console.log(req.query.order);
+
     res.send(JSON.stringify(results)); // Default 200 OK, it is not necessary to specify
 });
 
