@@ -3,21 +3,21 @@ let coursesInfo = {
         {
             id: 1,
             title: 'Learn Python',
-            topic: 'python',
+            language: 'python',
             views: 15000,
             level: 'essential'
         },
         {
             id: 2,
             title: 'Python intermediate',
-            topic: 'python',
+            language: 'python',
             views: 13553,
             level: 'intermediate'
         },
         {
             id: 3,
             title: 'Learn JavaScript',
-            topic: 'javascript',
+            language: 'javascript',
             views: 102223,
             level: 'essential'
         }
