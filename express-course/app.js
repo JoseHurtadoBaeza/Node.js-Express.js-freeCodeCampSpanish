@@ -5,6 +5,15 @@ const {coursesInfo} = require('./courses.js');
 
 console.log(coursesInfo);
 
+// Routers
+
+const routerProgramming = express.Router();
+app.use('/api/courses/programming', routerProgramming);
+
+const routerMaths = express.Router();
+app.use('/api/courses/math', routerMaths);
+
+
 // Routing
 
 app.get('/', (req, res) => {
@@ -17,11 +26,11 @@ app.get('/api/courses', (req, res) => {
 
 // Programming
 
-app.get('/api/courses/programming', (req, res) => {
+routerProgramming.get('/', (req, res) => {
     res.send(JSON.stringify(coursesInfo.programming));
 });
 
-app.get('/api/courses/programming/:language', (req, res) => {
+routerProgramming.get('/:language', (req, res) => {
     const language = req.params.language;
     const results = coursesInfo.programming.filter(course => course.language === language);
 
@@ -40,7 +49,7 @@ app.get('/api/courses/programming/:language', (req, res) => {
     res.send(JSON.stringify(results)); // Default 200 OK, it is not necessary to specify
 });
 
-app.get('/api/courses/programming/:language/:level', (req, res) => {
+routerProgramming.get('/:language/:level', (req, res) => {
     const language = req.params.language;
     const level = req.params.level;
 
@@ -56,11 +65,11 @@ app.get('/api/courses/programming/:language/:level', (req, res) => {
 
 // Maths
 
-app.get('/api/courses/math', (req, res) => {
+routerMaths.get('/', (req, res) => {
     res.send(JSON.stringify(coursesInfo.math));
 });
 
-app.get('/api/courses/math/:topic', (req, res) => {
+routerMaths.get('/:topic', (req, res) => {
     const topic = req.params.topic;
     const results = coursesInfo.math.filter(course => course.topic === topic);
 
