@@ -1,3 +1,7 @@
+### PROGRAMMING REQUESTS
+
+
+
 POST http://localhost:3000/api/courses/programming HTTP/1.1
 Content-Type: application/json
 
@@ -35,3 +39,46 @@ Content-Type: application/json
 ### 
 
 DELETE http://localhost:3000/api/courses/programming/1 HTTP/1.1
+
+
+### MATH REQUESTS
+
+
+
+POST http://localhost:3000/api/courses/math HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "title": "Learn Geometry",
+    "topic": "geometry",
+    "views": 14255,
+    "level": "advanced"
+}
+
+###
+
+PUT http://localhost:3000/api/courses/math/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "Learn Statistics",
+    "language": "statistics",
+    "views": 20452,
+    "level": "advanced"
+}
+
+###
+
+PATCH http://localhost:3000/api/courses/math/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Learn Trigonometry",
+    "topic": "trigonometry"
+}
+
+### 
+
+DELETE http://localhost:3000/api/courses/math/1 HTTP/1.1

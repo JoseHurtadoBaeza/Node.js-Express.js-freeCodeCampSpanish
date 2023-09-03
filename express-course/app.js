@@ -23,10 +23,6 @@ app.get('/api/courses', (req, res) => {
     res.send(JSON.stringify(coursesInfo));
 });
 
-// Programming
-
-// Maths
-
 const PORT = process.env.PORT || 3000; // The first option is for the hosting port provided
 
 app.listen(PORT, () => {
